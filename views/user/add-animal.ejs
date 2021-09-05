@@ -1,0 +1,155 @@
+<%- include('../layouts/header.ejs') %>
+    <section class="section">
+        <div class="container form">
+            <div class="input-cont">
+                <% if(edit) { %>
+                    <h1>Edit Animal</h1>
+                    <form action="/account/animal/update/<%= body.id %>" method="POST" enctype="multipart/form-data" novalidate>
+                        <% if(message) { %>
+                            <div class="error"><i class="fa fa-check" style="margin-right: 10px;"></i>
+                                <%= message %>
+                            </div>
+                            <% } %>
+                                <div class="input">
+                                    <h5>Name</h5>
+                                    <input type="text" name="name" value="<%= body.name %>" required>
+                                    <% if(errors.name ) { %>
+                                        <small><%= errors.name.msg %></small>
+                                        <% } %>
+                                </div>
+                                <div class="input">
+                                    <h5>Description</h5>
+                                    <textarea name="description" rows="3" required><%= body.description %></textarea>
+                                    <% if(errors.description ) { %>
+                                        <small><%= errors.description.msg %></small>
+                                        <% } %>
+                                </div>
+                                <div class="input">
+                                    <h5>Animal Image <i>(*leave empty to retain current image)</i></h5>
+                                    <input type="file" name="animal" style="background-color: white; color: black;">
+                                    <% if(imgError ) { %>
+                                        <small><%= imgError %></small>
+                                        <% } %>
+                                </div>
+                                <div class="input">
+                                    <h5>Endangered?</h5>
+                                    <select name="endangered" required>
+                                        <option value="">Choose option</option>
+                                        <option value="Yes" <%= body.endangered == 'Yes' ? 'selected' : '' %>>Yes</option>
+                                        <option value="No" <%= body.endangered == 'No' ? 'selected' : '' %>>No</option>
+                                    </select>
+                                    <% if(errors.endangered ) { %>
+                                        <small><%= errors.endangered.msg %></small>
+                                        <% } %>
+                                </div>
+                                <div class="input">
+                                    <h5>Classification</h5>
+                                    <select name="class" required>
+                                        <option value="">Choose Classification</option>
+                                        <option value="Mammal" <%= body.class == 'Mammal' ? 'selected' : '' %>>Mammal</option>
+                                        <option value="Bird" <%= body.class == 'Bird' ? 'selected' : '' %>>Bird</option>
+                                        <option value="Fish" <%= body.class == 'Fish' ? 'selected' : '' %>>Fish</option>
+                                        <option value="Reptile" <%= body.class == 'Reptile' ? 'selected' : '' %>>Reptile</option>
+                                        <option value="Amphibian" <%= body.class == 'Amphibian' ? 'selected' : '' %>>Amphibian</option>
+                                        <option value="Invertebrate" <%= body.class == 'Invertebrate' ? 'selected' : '' %>>Invertebrate</option>
+                                    </select>
+                                    <% if(errors.class ) { %>
+                                        <small><%= errors.class.msg %></small>
+                                        <% } %>
+                                </div>
+                                <div class="input">
+                                    <h5>Habital</h5>
+                                    <select name="habitat" required>
+                                        <option value="">Choose Habitat</option>
+                                        <option value="Terrestrial" <%= body.habitat == 'Terrestrial' ? 'selected' : '' %>>Terrestrial</option>
+                                        <option value="Aquatic" <%= body.habitat == 'Aquatic' ? 'selected' : '' %>>Aquatic</option>
+                                    </select>
+                                    <% if(errors.habitat ) { %>
+                                        <small><%= errors.habitat.msg %></small>
+                                        <% } %>
+                                </div>
+                                <div class="input">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <input type="hidden" name="id" value="<%= body.id %>">
+                                    <input type="submit" value="Update Animal">
+                                </div>
+                    </form>
+                    <% }else { %>
+                        <h1>Add Animal</h1>
+                        <form action="/account/animal" method="POST" enctype="multipart/form-data" novalidate>
+                            <% if(message) { %>
+                                <div class="error"><i class="fa fa-check" style="margin-right: 10px;"></i>
+                                    <%= message %>
+                                </div>
+                                <% } %>
+                                    <div class="input">
+                                        <h5>Name</h5>
+                                        <input type="text" name="name" value="<%= body.name %>" required>
+                                        <% if(errors.name ) { %>
+                                            <small><%= errors.name.msg %></small>
+                                            <% } %>
+                                    </div>
+                                    <div class="input">
+                                        <h5>Description</h5>
+                                        <textarea name="description" rows="3" required><%= body.description %></textarea>
+                                        <% if(errors.description ) { %>
+                                            <small><%= errors.description.msg %></small>
+                                            <% } %>
+                                    </div>
+                                    <div class="input">
+                                        <h5>Animal Image</h5>
+                                        <input type="file" name="animal" style="background-color: white; color: black;" required>
+                                        <% if(imgError ) { %>
+                                            <small><%= imgError %></small>
+                                            <% } %>
+                                    </div>
+                                    <div class="input">
+                                        <h5>Endangered?</h5>
+                                        <select name="endangered" required>
+                                            <option value="">Choose option</option>
+                                            <option value="Yes" <%= body.endangered == 'Yes' ? 'selected' : '' %>>Yes</option>
+                                            <option value="No" <%= body.endangered == 'No' ? 'selected' : '' %>>No</option>
+                                        </select>
+                                        <% if(errors.endangered ) { %>
+                                            <small><%= errors.endangered.msg %></small>
+                                            <% } %>
+                                    </div>
+                                    <div class="input">
+                                        <h5>Classification</h5>
+                                        <select name="class" required>
+                                            <option value="">Choose Classification</option>
+                                            <option value="Mammal" <%= body.class == 'Mammal' ? 'selected' : '' %>>Mammal</option>
+                                            <option value="Bird" <%= body.class == 'Bird' ? 'selected' : '' %>>Bird</option>
+                                            <option value="Fish" <%= body.class == 'Fish' ? 'selected' : '' %>>Fish</option>
+                                            <option value="Reptile" <%= body.class == 'Reptile' ? 'selected' : '' %>>Reptile</option>
+                                            <option value="Amphibian" <%= body.class == 'Amphibian' ? 'selected' : '' %>>Amphibian</option>
+                                            <option value="Invertebrate" <%= body.class == 'Invertebrate' ? 'selected' : '' %>>Invertebrates</option>
+                                        </select>
+                                        <% if(errors.class ) { %>
+                                            <small><%= errors.class.msg %></small>
+                                            <% } %>
+                                    </div>
+                                    <div class="input">
+                                        <h5>Habital</h5>
+                                        <select name="habitat" required>
+                                            <option value="">Choose Habitat</option>
+                                            <option value="Terrestrial" <%= body.habitat == 'Terrestrial' ? 'selected' : '' %>>Terrestrial</option>
+                                            <option value="Aquatic" <%= body.habitat == 'Aquatic' ? 'selected' : '' %>>Aquatic</option>
+                                        </select>
+                                        <% if(errors.habitat ) { %>
+                                            <small><%= errors.habitat.msg %></small>
+                                            <% } %>
+                                    </div>
+                                    <div class="input">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <input type="submit" value="Add Animal">
+                                    </div>
+                        </form>
+                        <% } %>
+            </div>
+        </div>
+    </section>
+    <div class="copyright">© 2021 Zootopia. All rights reserved.</div>
+    </body>
+
+    </html>

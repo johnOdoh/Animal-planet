@@ -1,0 +1,32 @@
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer">
+            <div class="about">
+                <h3>About <span style="color: yellowgreen;font-family: cursive;">Animal Planet</span></h3>
+                <p>Animal Planet is an educative website that teaches young people about various animals. it is aimed at informing the younger generation about animals in order to improve their love for animals so they can better take care of them.</p>
+            </div>
+            <div class="links">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/animaal">Our Animals</a></li>
+                    <li><a href="/games">Games</a></li>
+                    <% if(isLoggedIn) { %>
+                        <li><a href="/account/animal">My Animals</a></li>
+                        <li><a href="/account/animal/create">Add Animal</a></li>
+                        <% }else{ %>
+                            <li><a href="/auth/login">Login</a></li>
+                            <li><a href="/auth/register">Register</a></li>
+                            <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright">© 2021 Animal Planet. All rights reserved.</div>
+<% if(title === 'Home') { %>
+    <script src="/js/script.js"></script>
+    <% } %>
+        </body>
+
+        </html>

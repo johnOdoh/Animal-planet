@@ -1,0 +1,116 @@
+<%- include('../layouts/header.ejs') %>
+    <section>
+        <div>
+            <img src="img/banner-1.jpg" alt="" class="imgs">
+            <img src="img/banner-3.jpg" alt="" class="imgs">
+            <img src="img/banner-2.jpg" alt="" class="imgs">
+        </div>
+        <div class="dotcont">
+            <span class="dots"></span>
+            <span class="dots"></span>
+            <span class="dots"></span>
+        </div>
+    </section>
+    <section class="section" style="background-color: rgb(17, 99, 131)">
+        <div class="container">
+            <div class="d-flex">
+                <img src="img/dolphins.jpg" alt="">
+                <div class="desc">
+                    <h1>Animal Definition</h1>
+                    <p>The word animal comes from the latin word "animalis", meaning "having breath" or "lining being". The biological definition includes all members of the kingdom <i>Animalia.</i></p>
+                    <p>Animals are interenting creatures that make-up more than 90% of the world's biological population. Animals are multicellular organisms which consume organic material, breathe oxygen, are also able to move and reproduce. <br>We believe
+                        that if you know more about world's creatures, then you will better care for them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background-color:rgba(0, 82, 0, 0.712);">
+        <div class="container">
+            <div class="d-flex">
+                <div class="desc">
+                    <h1>Classification of Animals</h1>
+                    <p>There are various ways animals can be classified but the most basic classifications are Vertebrates and Invertebrates.
+                        <ul style="margin-left: 25px;">
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Invertebrates: </span>They are animals without backbone. Examples are worms, snails, butterflies, scopions, insects etc.
+                            </li>
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Vertebrates: </span>They are animals with backbone. Examples are Mammals, Birds, Fishes, Reptiles and Amphibians.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <img src="img/gallery-blue-butterfly.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background-color: rgb(131, 71, 29)">
+        <div class="container">
+            <div class="d-flex">
+                <img src="img/gallery-penguin.jpg" alt="">
+                <div class="desc">
+                    <h1>Classification of Vertebrates</h1>
+                    <p>Vertebrates can be brocken down into the following five classes:
+                        <ul style="margin-left: 25px;">
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Mammals: </span>Mammals are warm-blooded vertebrates that live on land. Mammals give birth to live babies and their young get nourishment from milk produced by their mothers. Mammals have
+                                hairs. Exampls are humans, whales, elephants, rabits, rats, monkeys etc.
+                            </li>
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Birds: </span>Birds are a type of warm-blooded vertebrates that are adapted to fly. Not all birds can fly but they all have wings. Birds lay eggs to reproduce. They have hollow bones and
+                                their bodies are covered in feathers. Examples are chickens, penguins, pigeons, falcons, kites, parrots, hummingbirds etc.
+                            </li>
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Reptiles: </span>Reptiles are cold-blooded vertebrates. Some reptiles live on land while some live in water or both. They lay eggs th reproduce. They breathe through lungs and their bodies
+                                are covered in scales.
+                            </li>
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Fishes: </span>Fishes are cold-blooded vertebrates that live in water. They have fins and breathe through their gills. Their bodies are covered in scales. Examples are sharks, eels, salmons,
+                                seahorses etc
+                            </li>
+                            <li style="padding-top: 5px;">
+                                <span style="color: yellowgreen;">Amphibians: </span>Amphibians are animals that need moist environment or water to survive. They are cold-blooded. They absorb water and breathe through their skin. Examples are frogs, toads,
+                                salamanders etc.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background-color: rgb(131, 71, 29)">
+        <div class="container">
+            <div class="d-flex">
+                <div class="desc">
+                    <h1>Animal Habitat</h1>
+                    <p>A habitat is a place that an animal lives. It provides the animal with food, water and shelter. The two main types of habitat are Terrestrial or Land habitats and Aquatic or Water habitats.</p>
+                    <p>Some examples of terrestrial habitats are forests, rainforests, deserts, grasslands, tundra, mountains etc.</p>
+                    <p>Examples of aquatic habitats are fresh water and salt water. Fresh water include streams, rivers, swamps, lakes, ponds etc. While salt water include oceans, seas, salt lakes etc.</p>
+                </div>
+                <img src="img/lion-family.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background-color: rgb(131, 71, 29)">
+        <div class="container">
+            <div class="d-flex">
+                <img src="img/gallery-owl.jpg" alt="">
+                <div class="desc">
+                    <h1>Endangered Species</h1>
+                    <p>Endangered species are any species that is at risk of extinction because of a sudden rapid decrease in its population or a loss of its critical habitat. Any species of plant or animal that was threatened with extinction could be called
+                        an endangered species. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% if(!isLoggedIn) { %>
+        <section class="section" style="background-color: rgb(65, 40, 22); color:white; padding: 10px 0;">
+            <div class="container">
+                <div style="display: flex;font-size: 3em; text-align: justify; justify-content: space-between;align-items: center;">
+                    <h5 style="padding-right: 25px;">Know any amazing animals that are not on our site? please Login and Upload them</h5>
+                    <div><a href="/auth/login" class="btn" style="float: right;">LOGIN</a></div>
+                </div>
+            </div>
+        </section>
+        <% } %>
+            <%- include('../layouts/footer.ejs') %>

@@ -1,0 +1,36 @@
+<%- include('../layouts/header.ejs') %>
+    <section class="section">
+        <div class="container form">
+            <div class="input-cont">
+                <h1>REGISTER</h1>
+                <form action="/auth/register" method="POST">
+                    <div class="input">
+                        <h5>Username</h5>
+                        <input type="text" name="username">
+                        <% if(errMessage || errors.username ) { %>
+                            <small><%= errMessage || errors.username.msg %></small>
+                            <% } %>
+                    </div>
+                    <div class="input">
+                        <h5>Password</h5>
+                        <input type="password" name="password">
+                        <% if(errors.password) { %>
+                            <small><%= errors.password.msg %></small>
+                            <% } %>
+                    </div>
+                    <div class="input">
+                        <h5>Confirm Password</h5>
+                        <input type="password" name="passwordConfirm">
+                        <% if(errors.passwordConfirm) { %>
+                            <small><%= errors.passwordConfirm.msg %></small>
+                            <% } %>
+                    </div>
+                    <div class="input">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <%- include('../layouts/footer.ejs') %>

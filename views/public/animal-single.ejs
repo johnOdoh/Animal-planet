@@ -1,0 +1,50 @@
+<%- include('../layouts/header.ejs') %>
+
+    <section class="section" style="background-color:rgb(131, 71, 29)">
+        <div class="container">
+            <div class="img-container">
+                <h1>The European Elephant</h1>
+                <% if(animal.endangered == 'Yes') { %>
+                    <div class="endangered">Endangered</div>
+                    <% } %>
+                        <img src="<%= animal.image %>" alt="<%= animal.name %>" class="animal-img">
+                        <div class="animal-class">
+                            <div class="kind"><span class="title">Classification: </span>
+                                <%= animal.class %>
+                            </div>
+                            <div class="kind"><span class="title">Habitat: </span>
+                                <%= animal.habitat %>
+                            </div>
+                        </div>
+            </div>
+            <p class="animal-description">
+                <%= animal.description %>
+            </p>
+        </div>
+    </section>
+    <section class="section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="related">
+                <h1 class="related-head">Related Animals</h1>
+                <div class="body">
+                    <% for(let animal of animals) { %>
+                        <div class="animal-box">
+                            <h1>
+                                <%= animal.name %>
+                            </h1>
+                            <div><img src="<%= animal.image %> " alt=""></div>
+                            <div class="kind"><span class="title">Classification: </span>
+                                <%= animal.class %>
+                            </div>
+                            <div class="kind"><span class="title">Habitat: </span>
+                                <%= animal.class %>
+                            </div>
+                            <div class="link"><a href="/animal/<%= animal.id %> " class="btn">Explore Animal >>></a></div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../layouts/footer.ejs') %>

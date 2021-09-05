@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %> | Zootopia - Best Animal Website for Kids
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <% if(title == 'Quiz Game') { %>
+        <link rel="stylesheet" href="/css/quiz.css">
+        <% } %>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <label class="logo"><a href="/" style="color: yellowgreen;">Animal Planet</a></label>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul>
+                <li><a class="<%= title === 'Home' ? 'active' : '' %>" href="/">Home</a></li>
+                <li><a class="<%= title === 'Animals' ? 'active' : '' %>" href="/animal">Animals</a></li>
+                <li><a class="<%= title === 'Games' || title === 'Quiz Game' ? 'active' : '' %>" href="/games">Games</a></li>
+                <% if(isLoggedIn) { %>
+                    <li><a class="<%= title === 'My Animals' ? 'active' : '' %>" href="/account/animal">My Animals</a></li>
+                    <li><a class="<%= title === 'Add Animal' ? 'active' : '' %>" href="/account/animal/create">Add Animal</a></li>
+                    <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                    <form id="logout-form" action="/auth/logout" method="POST" style="display: none;">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    </form>
+                    <% }else { %>
+                        <li><a class="<%= title === 'Login' ? 'active' : '' %>" href="/auth/login">Login</a></li>
+                        <li><a class="<%= title === 'Register' ? 'active' : '' %>" href="/auth/register">Register</a></li>
+                        <% } %>
+            </ul>
+        </nav>
+    </div>

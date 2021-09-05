@@ -1,0 +1,612 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif, serif;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+label.logo {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 0 50px 0 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(65, 40, 22);
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav a.active,
+nav a:hover {
+    background: #723a09;
+    transition: .5s;
+}
+
+.checkbtn {
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.dots {
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+    transition: background-color 0.6s ease;
+}
+
+.dotcont {
+    margin-top: 3px;
+    text-align: center;
+}
+
+.active-dot {
+    background-color: black;
+}
+
+.imgs {
+    width: 100%;
+    min-height: 95vh;
+    max-height: 95vh;
+}
+
+.section {
+    padding: 80px 0;
+    background-color: #723a09;
+    background: linear-gradient(#633309, rgb(82, 48, 24));
+}
+
+.footer-section {
+    padding: 80px 0;
+    background-color: #633309;
+    background: linear-gradient(rgb(99, 54, 22), rgb(65, 40, 22));
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin: 50px 0;
+    font-size: 2em;
+    text-align: justify;
+}
+
+.d-flex img {
+    width: 50%;
+    padding: 30px;
+    height: 70vh;
+}
+
+.d-flex .desc {
+    width: 50%;
+    padding: 15px 30px;
+}
+
+.desc h1 {
+    padding-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: 0.5s ease-in-out;
+    background-color: rgba(0, 82, 0, 0.712);
+    color: whitesmoke;
+}
+
+.btn:hover {
+    color: whitesmoke;
+    background-color: rgb(37, 36, 36);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    text-align: justify;
+}
+
+.footer .about {
+    width: 50%;
+    margin-right: 40px;
+}
+
+.footer .links {
+    width: 50%;
+}
+
+.footer .links ul {
+    margin-left: 25px;
+}
+
+.footer a:hover {
+    color: yellowgreen;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+    border-bottom: white 2.5px solid;
+    padding-bottom: 10px;
+}
+
+.copyright {
+    text-align: center;
+    background-color: rgb(65, 40, 22);
+    padding: 20px;
+    font-size: 1.6em;
+    border-top: rgb(99, 54, 22) solid 1px;
+}
+
+
+/* animals page */
+
+.tile {
+    background: url(/img/tile.jpg) no-repeat;
+    background-size: cover;
+    height: 35vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    position: relative;
+}
+
+.tile .title {
+    /* padding-top: 20vh; */
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    padding: 0px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row .list {
+    width: 70%;
+    padding-right: 5px;
+    border-right: white solid 0.2px;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row .list .head {
+    padding-bottom: 15px;
+    border-bottom: white solid 1px;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    vertical-align: middle;
+}
+
+.row .categories {
+    width: 30%;
+}
+
+.animal-box {
+    width: calc(50% - 10px);
+    padding: 20px;
+    background: rgb(65, 40, 22);
+    border-radius: 0.5rem;
+    margin: 0 5px 5px 5px;
+}
+
+.related .animal-box {
+    width: calc((100% / 3) - 10px);
+}
+
+.my-animals .animal-box {
+    width: calc(25% - 10px);
+}
+
+.animal-box h1 {
+    font-size: 1.7em;
+    padding-bottom: 7px;
+    text-transform: capitalize;
+}
+
+.animal-box img {
+    min-height: 300px;
+    max-height: 300px;
+    width: 100%;
+}
+
+.related .animal-box img {
+    min-height: 150px;
+    max-height: 150px;
+    width: 100%;
+}
+
+.kind {
+    font-size: 1.2em;
+    margin-top: 5px;
+    color: yellowgreen;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.animal-box .link .btn {
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.categories {
+    font-size: 1.7em;
+    padding-left: 10px;
+}
+
+.categories .search {
+    margin-bottom: 15px;
+}
+
+.categories .search input {
+    height: 30px;
+    padding: 5px;
+    background-color: whitesmoke;
+    border: solid 1px rgb(65, 40, 22);
+    border-radius: 5px;
+}
+
+.categories .search input::placeholder {
+    font-style: italic;
+}
+
+.categories .search button {
+    height: 30px;
+    padding: 0 10px;
+    background-color: rgb(133, 66, 19);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.categories .search button:hover {
+    background-color: rgb(65, 40, 22);
+}
+
+.categories h3 {
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+.categories ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.categories ul li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.categories ul li a {
+    padding: 5px 5em 5px 2px;
+    width: 100%;
+    margin: 10px 0;
+    transition: 0.5s ease-in-out;
+}
+
+.categories ul li a:hover {
+    background: rgba(65, 40, 22, 0.5);
+}
+
+
+/* animal-single page */
+
+.img-container h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.img-container .animal-class {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.img-container .animal-class div {
+    padding-bottom: 10px;
+}
+
+.animal-img {
+    min-height: 50vh;
+    max-height: 70vh;
+    width: 100%;
+}
+
+.animal-description {
+    font-size: 1.5em;
+}
+
+.related .related-head {
+    padding: 0 0 10px 5px;
+    font-size: 2em;
+}
+
+.form {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5em;
+}
+
+.input-cont {
+    width: 50%;
+}
+
+.form h1 {
+    margin: 15px 0;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.error,
+.form .input {
+    margin: 15px;
+}
+
+.input input,
+textarea,
+select {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+    width: 100%;
+    height: auto;
+}
+
+.form .error {
+    background-color: rgb(65, 40, 22);
+    padding: 7px 5px;
+    font-weight: 600;
+    font-size: smaller;
+}
+
+.input small {
+    color: yellowgreen;
+    font-weight: 500;
+}
+
+input[type="submit"] {
+    height: 30px;
+    padding: 0 10px;
+    background-color: rgb(133, 66, 19);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(65, 40, 22);
+}
+
+.endangered {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 5px 0;
+    color: rgb(141, 194, 34)
+}
+
+.endangered-text {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 5px 5px;
+    color: rgb(141, 194, 34);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(65, 40, 22);
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1340px;
+    }
+}
+
+@media (max-width: 992px) {
+    .checkbtn {
+        display: block;
+    }
+    nav ul {
+        position: absolute;
+        width: 100%;
+        background-color: #723a09;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 2;
+    }
+    nav ul li {
+        display: block;
+        border-bottom: #633309 solid 0.5px;
+    }
+    nav ul li a {
+        padding: 5px 10px;
+        font-size: 20px;
+    }
+    nav a:hover,
+    nav a.active {
+        background: none;
+        color: yellowgreen;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    .row .list {
+        width: 80%;
+    }
+    .row .categories {
+        width: 20%;
+    }
+    .my-animals .animal-box {
+        width: calc((100% / 3) - 10px);
+    }
+}
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+    .row .list {
+        width: 50%;
+    }
+    .row .categories {
+        width: 50%;
+    }
+    .animal-box {
+        width: 100%;
+    }
+    .related .animal-box {
+        width: calc(50% - 10px);
+    }
+    .my-animals .animal-box {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 850px) {
+    .d-flex {
+        display: block;
+    }
+    .d-flex img {
+        display: block;
+        width: 100%;
+        margin: auto;
+        padding: 30px;
+        height: 80vh;
+    }
+    .d-flex .desc {
+        width: 100%;
+        padding: 30px;
+    }
+    .row {
+        display: block;
+    }
+    .row .list {
+        display: block;
+        width: 100%;
+        border-right: none;
+        border-bottom: solid white 1px;
+        padding-bottom: 30px;
+    }
+    .row .categories {
+        margin-top: 30px;
+        width: 100%;
+    }
+    .input-cont {
+        width: 95%;
+    }
+}
+
+@media (max-width: 750px) {
+    .related .animal-box {
+        width: 100%;
+    }
+    .my-animals .animal-box {
+        width: 100%
+    }
+}

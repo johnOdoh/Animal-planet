@@ -1,0 +1,4 @@
+/node_modules
+package copy.json
+sessions
+.package-lock.json

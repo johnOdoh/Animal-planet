@@ -1,0 +1,61 @@
+<%- include('../layouts/header.ejs') %>
+    <section class="tile">
+        <div class="container">
+            <h1 class="title">Our Animals</h1>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="list">
+                    <div class="head">
+                        <div>
+                            <%= search+' - '+count %> Animal(s) found
+                        </div>
+                    </div>
+                    <div class="body">
+                        <% for(let animal of animals) { %>
+                            <div class="animal-box">
+                                <h1>
+                                    <%= animal.name %>
+                                </h1>
+                                <div style="position: relative;">
+                                    <% if(animal.endangered == 'Yes') { %>
+                                        <span class="endangered-text">Endangered</span>
+                                        <% } %>
+                                            <img src="<%= animal.image %>" alt="">
+                                </div>
+                                <div class="kind"><span class="title">Classification: </span>
+                                    <%= animal.class %>
+                                </div>
+                                <div class="kind"><span class="title">Habitat: </span>
+                                    <%= animal.habitat %>
+                                </div>
+                                <div class="link"><a href="/animal/<%= animal.id %>" class="btn">Explore Animal >>></a></div>
+                            </div>
+                            <% } if(count < 1) { %>
+                                <h1 style="color: white;font-size: 1.5em;margin-top: 1.5em;">Sorry, No animals were found. Know any awesome Animals? Please Login to upload them</h1>
+                                <% } %>
+                    </div>
+                </div>
+                <div class="categories">
+                    <form action="/animal" class="search">
+                        <input type="text" name="search" placeholder="Search" required>
+                        <button type="submit">Search</button>
+                    </form>
+                    <h3>Animal categories</h3>
+                    <ul>
+                        <li><a href="/animal?endangered=y">Endangered</a></li>
+                        <li><a href="/animal?class=Mammal">Mamals</a></li>
+                        <li><a href="/animal?class=Bird">Birds</a></li>
+                        <li><a href="/animal?class=Fish">Fishes</a></li>
+                        <li><a href="/animal?class=Reptile">Reptiles</a></li>
+                        <li><a href="/animal?class=Insect">Insects</a></li>
+                        <li><a href="/animal?class=Other">Others</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../layouts/footer.ejs') %>

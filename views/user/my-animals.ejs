@@ -1,0 +1,64 @@
+<%- include('../layouts/header.ejs') %>
+
+    <section class="tile">
+        <div class="container">
+            <h1 class="title">My Animals</h1>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="my-animals">
+                <div class="body">
+                    <% for(let animal of animals) { %>
+                        <div class="animal-box">
+                            <h1>
+                                <%= animal.name %>
+                            </h1>
+                            <div style="position: relative;">
+                                <% if(animal.endangered == 'Yes') { %>
+                                    <span class="endangered-text">Endangered</span>
+                                    <% } %>
+                                        <img src="<%= animal.image %>" alt="<%= animal.name %>"></div>
+                            <div class="kind"><span class="title">Classification: </span>
+                                <%= animal.class %>
+                            </div>
+                            <div class="kind"><span class="title">Habitat: </span>
+                                <%= animal.habitat %>
+                            </div>
+                            <div class="kind"><span class="title">Botanical Name: </span>
+                                <%= animal.botanical_name || 'N/A' %>
+                            </div>
+                            <div class="link" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
+                                <a href="/animal/<%= animal.id %>" class="btn">View</a>
+                                <a href="/account/animal/<%= animal.id %>/edit" class="btn">Edit</a>
+                                <a href="#" data-id="<%= animal.id %>" class="btn" onclick="event.preventDefault(); remove(this)">Delete</a>
+                            </div>
+                        </div>
+                        <% } if(count < 1) { %>
+                            <h1 style="color: white;font-size: 1.5em;margin-top: 1.2em;">You have no animals Yet. Know any awesome Animals?
+                                <a href="/account/animal/create" style="color: yellowgreen;">Please add them</a></h1>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+        <form method="POST" id="delete-form">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        </form>
+    </section>
+    <script>
+        const remove = element => {
+            const id = element.getAttribute('data-id')
+            const deleteForm = document.getElementById('delete-form')
+            deleteForm.action = '/account/animal/delete/' + id
+            deleteForm.submit()
+        }
+    </script>
+    <div class="copyright">© 2021 Zootopia. All rights reserved.</div>
+    </body>
+    <% if(message) { %>
+        <script>
+            alert('<%= message %>')
+        </script>
+        <% } %>
+
+            </html>
