@@ -1,64 +1,207 @@
 // creating an array and passing the number, questions, options, and answers
 let questions = [{
-        numb: 1,
-        question: "What does HTML stand for?",
-        answer: "Hyper Text Markup Language",
+        question: "What class of animal is does a lion belong to?",
+        answer: "Mammal",
         options: [
-            "Hyper Text Preprocessor",
-            "Hyper Text Markup Language",
-            "Hyper Text Multiple Language",
-            "Hyper Tool Multi Language"
+            "Mammal",
+            "Bird",
+            "Reptile",
+            "Amphibian"
         ]
     },
     {
-        numb: 2,
-        question: "What does CSS stand for?",
-        answer: "Cascading Style Sheet",
+        question: "Which of these is correct?",
+        answer: "Amphibians need water to survive",
         options: [
-            "Common Style Sheet",
-            "Colorful Style Sheet",
-            "Computer Style Sheet",
-            "Cascading Style Sheet"
+            "Mammals lay eggs",
+            "Amphibians need water to survive",
+            "Fishes give birth to live babies",
+            "Reptiles have fins"
         ]
     },
     {
-        numb: 3,
-        question: "What does PHP stand for?",
-        answer: "Hypertext Preprocessor",
+        question: "Which of these is not a type of vertebrate?",
+        answer: "Scopion",
         options: [
-            "Hypertext Preprocessor",
-            "Hypertext Programming",
-            "Hypertext Preprogramming",
-            "Hometext Preprocessor"
+            "Frog",
+            "Scopion",
+            "Snake",
+            "Shark"
         ]
     },
     {
-        numb: 4,
-        question: "What does SQL stand for?",
-        answer: "Structured Query Language",
+        question: "Which of these is not true about birds",
+        answer: "All birds can fly",
         options: [
-            "Stylish Question Language",
-            "Stylesheet Query Language",
-            "Statement Question Language",
-            "Structured Query Language"
+            "All birds have feathers",
+            "All birds have wings",
+            "All birds lay eggs",
+            "All birds can fly"
         ]
     },
     {
-        numb: 5,
-        question: "What does XML stand for?",
-        answer: "eXtensible Markup Language",
+        question: "Which of these is not an insect",
+        answer: "Snail",
         options: [
-            "eXtensible Markup Language",
-            "eXecutable Multiple Language",
-            "eXTra Multi-Program Language",
-            "eXamine Multiple Language"
+            "Mosquito",
+            "Ant",
+            "Snail",
+            "Spider"
+        ]
+    },
+    {
+        question: "Which of class of animal does humans belong to?",
+        answer: "Mammal",
+        options: [
+            "Mammal",
+            "Birds",
+            "Reptile",
+            "Fish"
+        ]
+    },
+    {
+        question: "Which of these animals is a wild animal",
+        answer: "Elephant",
+        options: [
+            "Dog",
+            "Cat",
+            "Chicken",
+            "Elephant"
+        ]
+    },
+    {
+        question: "What is a carnivore?",
+        answer: "Animals that eat only meat",
+        options: [
+            "Animals that eat only vegitables",
+            "Animals that eat both plants and meat",
+            "Animals that eat only meat",
+            "Animals that eat only plants"
+        ]
+    },
+    {
+        question: "Which of these is a carnivore?",
+        answer: "Tiger",
+        options: [
+            "Monkey",
+            "Elephant",
+            "Tiger",
+            "Frog"
+        ]
+    },
+    {
+        question: "Which of these is false about Fishes?",
+        answer: "They breathe through their lungs",
+        options: [
+            "They live in water",
+            "They breathe through their lungs",
+            "They breathe through their gills",
+            "They have fins"
+        ]
+    },
+    {
+        question: "Which of these is not a Reptile",
+        answer: "Rat",
+        options: [
+            "Snake",
+            "Crocodile",
+            "Rat",
+            "Lizard"
+        ]
+    },
+    {
+        question: "Amphibians breathe through their?",
+        answer: "Skin",
+        options: [
+            "Lungs",
+            "Skin",
+            "Gills",
+            "Nose"
+        ]
+    },
+    {
+        question: "Which of these animals have an aquatic habitat?",
+        answer: "Shark",
+        options: [
+            "Snake",
+            "Shark",
+            "Rat",
+            "Bat"
+        ]
+    },
+    {
+        question: "What class of animal is a Rat?",
+        answer: "Mammal",
+        options: [
+            "Reptile",
+            "Amphibian",
+            "Mammal",
+            "Bird"
+        ]
+    },
+    {
+        question: "What are endangered animals?",
+        answer: "Animals that are in danger of extinction",
+        options: [
+            "Animals that are in danger of extinction",
+            "Animals that are large in number",
+            "Animals that are dangerous to humans",
+            "Wild Animals"
+        ]
+    },
+    {
+        question: "What class of animal do spiders belong to?",
+        answer: "Invertebrates",
+        options: [
+            "Fishes",
+            "Amphibians",
+            "Reptiles",
+            "Invertebrates"
+        ]
+    },
+    {
+        question: "What are Invertebrates?",
+        answer: "Animals that do not have a backbone",
+        options: [
+            "Animals that have a backbone",
+            "Animals that do not have a backbone",
+            "Animals that have fins",
+            "Animals that have scales"
+        ]
+    },
+    {
+        question: "Which of these animals has a scale?",
+        answer: "Animals that do not have a backbone",
+        options: [
+            "Lizard",
+            "Bat",
+            "Pigeon",
+            "Spider"
+        ]
+    },
+    {
+        question: "Which of these animals does not have a scale?",
+        answer: "Hummingbird",
+        options: [
+            "Snake",
+            "Crocodile",
+            "Shark",
+            "Hummingbird"
+        ]
+    },
+    {
+        question: "Which of these animals is the largest",
+        answer: "Elephant",
+        options: [
+            "Ape",
+            "Elephant",
+            "Lion",
+            "Girafe"
         ]
     },
     // you can uncomment the below codes and make duplicate as more as you want to add question
-    // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
 
     //   {
-    //   numb: 6,
     //   question: "Your Question is Here",
     //   answer: "Correct answer of the question is here",
     //   options: [
@@ -75,3 +218,4 @@ for (let i = questions.length - 1; i > 0; i--) {
     questions[i] = questions[j]
     questions[j] = temp
 }
+questions = questions.slice(0, 9)

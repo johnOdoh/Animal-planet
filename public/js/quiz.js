@@ -99,7 +99,7 @@ function showQuetions(index) {
         question.options[j] = temp
     }
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>' + question.numb + ". " + question.question + '</span>'
+    let que_tag = '<span>' + (index + 1) + ". " + question.question + '</span>'
     let option_tag = '<div class="option"><span>' + question.options[0] + '</span></div>' +
         '<div class="option"><span>' + question.options[1] + '</span></div>' +
         '<div class="option"><span>' + question.options[2] + '</span></div>' +
